@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - id: foo
-        uses: Vipul-Cariappa/lua-action@test
+        uses: Vipul-Cariappa/lua-action@main
       - run: lua -v
         shell: bash
