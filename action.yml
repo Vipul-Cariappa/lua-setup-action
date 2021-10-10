@@ -15,9 +15,9 @@ runs:
         wget https://gist.githubusercontent.com/Vipul-Cariappa/2e957b77f5d6dde7c0b6d01c04beb911/raw/1f0dfd074f338a3261f918d5df158d4d92c2bb25/premake5.lua
         ./premake5 gmake
         make
-        cp bin/lib/Debug/liblua.so /usr/lib/
-        cp bin/exec/interpreter/Debug/luai /usr/bin/lua
-        cp bin/exec/compiler/Debug/luac /usr/bin/luac
+        sudo cp bin/lib/Debug/liblua.so /usr/lib/
+        sudo cp bin/exec/interpreter/Debug/luai /usr/bin/lua
+        sudo cp bin/exec/compiler/Debug/luac /usr/bin/luac
         cd ..
         rm -fr lua-5.4.3
       shell: bash
