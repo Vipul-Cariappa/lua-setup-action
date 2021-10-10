@@ -1,0 +1,23 @@
+name: 'Setup Lua'
+description: 'Setup Lua'
+
+runs:
+  using: "composite"
+  steps:
+    - run: |
+        sudo apt-get install -y gcc tar make
+        wget http://www.lua.org/ftp/lua-5.4.3.tar.gz
+        tar -xf lua-5.4.3.tar.gz
+        cd lua-5.4.3
+        wget https://github.com/premake/premake-core/releases/download/v5.0.0-alpha16/premake-5.0.0-alpha16-linux.tar.gz
+        tar -xf premake-5.0.0-alpha16-linux.tar.gz
+        rm -fr premake-5.0.0-alpha16-linux.tar.gz
+        wget https://raw.githubusercontent.com/Vipul-Cariappa/lua-action/main/premake5.lua?token=ANI5JBKXVWYXCTRTYKJMJODBMJXBQ
+        ./premake5 gmake
+        make
+        cp bin/lib/Debug/liblua.so /usr/lib/
+        cp bin/exec/interpreter/Debug/luai /usr/bin/lua
+        cp bin/exec/compiler/Debug/luac /usr/bin/luac
+        cd ..
+        rm -fr lua-5.4.3
+      shell: bash
