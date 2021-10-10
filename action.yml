@@ -18,6 +18,7 @@ runs:
         sudo cp bin/lib/Debug/liblua.so /usr/lib/
         sudo cp bin/exec/interpreter/Debug/luai /usr/bin/lua
         sudo cp bin/exec/compiler/Debug/luac /usr/bin/luac
+        sudo cp -r src/ /usr/include/lua5.4/
         cd ..
         rm -fr lua-5.4.3
       shell: bash
